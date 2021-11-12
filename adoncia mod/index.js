@@ -10,7 +10,7 @@ const sunucu = require("./models/sunucu-bilgi.js")
 const extra = require("./models/extraMute.js")
 const user = require("./models/user.js");
 const logs = require("discord-logs");
-const tokuchi = require("pretty-ms");
+const adoncia = require("pretty-ms");
 const ms = require("ms");
 class TokuchiBot extends Client {
   constructor(options) {
@@ -57,10 +57,10 @@ class TokuchiBot extends Client {
     }
   }
 
-  lastCeza = sunucu.findOne({ guild: "727881213406347282" }).then(res => res.ihlal)
+  lastCeza = sunucu.findOne({ guild: "" }).then(res => res.ihlal)
 
   async savePunishment() {
-    sunucu.findOne({ guild: "727881213406347282" }, async (err, res) => {
+    sunucu.findOne({ guild: "" }, async (err, res) => {
       if (!res) return
       res.ihlal = res.ihlal + 1
       res.save().catch(e => console.log(e))
@@ -282,7 +282,7 @@ const init = async () => {
   });
 
 
-  client.login(process.env.TOKEN);
+  client.login("");
   mongoose.connect("", { useNewUrlParser: true, useUnifiedTopology: true })
     .then(client.logger.log("Mongo Bağlantısı Kuruldu ✔", "log"));
 
