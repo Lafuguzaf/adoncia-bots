@@ -5,7 +5,7 @@ const moment = require("moment")
 require("moment-duration-format")
 const Discord = require("discord.js")
 moment.locale("tr")
-const tokuchi = require("pretty-ms");
+const adoncia = require("pretty-ms");
 const mutes = require("../models/chatmute.js")
 const sunucu = require("../models/sunucu-bilgi.js")
 const bitmiyor = require("parse-ms")
